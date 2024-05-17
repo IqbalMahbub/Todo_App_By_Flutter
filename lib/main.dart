@@ -57,7 +57,17 @@ class _TodoListScreenState extends State<TodoListScreen> {
         itemCount: _todoItems.length,
         itemBuilder: (context, index) {
           return CheckboxListTile(
-            title: Text(_todoItems[index].task),
+            title: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              spacing: 30,
+              children: [
+                Text(_todoItems[index].task),
+                ElevatedButton(onPressed: (){
+                  _removeTodoItem(index);
+                }, child: Icon(Icons.delete))
+              ]
+
+            ),
             value: _todoItems[index].isDone,
             onChanged: (bool? isChecked) {
               _toggleTodoItem(index);
