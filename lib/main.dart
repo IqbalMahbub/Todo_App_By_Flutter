@@ -51,7 +51,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       appBar: AppBar(
         backgroundColor: Colors.pink.shade100,
         leading: Icon(Icons.home),
-        title: Text('Home'),
+        title: Text('Todo List'),
       ),
       body: ListView.builder(
         itemCount: _todoItems.length,
